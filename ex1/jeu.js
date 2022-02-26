@@ -12,7 +12,7 @@ const nouvellePartie = () => {
     let tentatives = 10 - difficulty;
     let guessed = toGuess + 1;
     do{
-        guessed = prompt(`guess number please ${toGuess} (${tentatives} left)`);
+        guessed = prompt(`guess number please (${tentatives} left)`);
         tentatives--;
     }while (tentatives > 0 && toGuess !== parseInt(guessed))
 
@@ -21,7 +21,7 @@ const nouvellePartie = () => {
     } else alert(`you loose ! the number was ${toGuess}`);
 
     start = prompt("do you want to replay ?", "no");
-    start = start.toLowerCase() in ["yes", "y", "ye", "yeah", "oui"];
+    start = ["yes", "y", "ye", "yeah", "oui"].includes(start.toLowerCase());
 }
 
 alert("welcome !!");
